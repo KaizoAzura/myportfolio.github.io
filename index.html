@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nicolas - Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- icon link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- link animasi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    <!-- modal -->
+    <!-- modal contact -->
+
+    <div class="modal modal fade" tabindex="-1" id="modalContact">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content modal-contact">
+          <div class="modal-header">
+            <h5 class="modal-title">Contact Me</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="contactForm">
+              <div class="mb-3">
+                <label for="emailInput" class="form-label">Email address</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailInput"
+                  aria-describedby="emailHelp"
+                  required
+                />
+                <div id="emailHelp" class="form-text mt-1 mb-0 text-secondary">
+                  We'll never share your email with anyone else.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="messageInput" class="form-label">Message</label>
+                <textarea
+                  class="form-control"
+                  id="messageInput"
+                  rows="3"
+                  required
+                ></textarea>
+              </div>
+              <button
+                type="button"
+                class="btn w-100"
+                style="background-color: orange; color: #000"
+                onclick="sendEmail()"
+              >
+                Send
+              </button>
+              <div class="modal-footer justify-content-start mt-3">
+                <a
+                  href="https://www.instagram.com/keponakan_izrail/"
+                  target="_blank"
+                  ><i class="fa-brands fa-instagram"></i
+                ></a>
+                <a href="https://github.com/KaizoAzura" target="_blank"
+                  ><i class="fa-brands fa-github ms-2"></i
+                ></a>
+                <a
+                  href="www.linkedin.com/in/nicolas-satria-521828239"
+                  target="_blank"
+                  ><i class="fa-brands fa-linkedin ms-2"></i
+                ></a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    >
+    <!-- end modal contact -->
+    <!-- end modal -->
+
+    <!-- navbar -->
+
+    <nav id="navbar-nav" class="navbar px-3 mb-3 fixed-top">
+      <a class="navbar-brand" href="index.html">NICOLAS</a>
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link" href="#home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#skill">Skill</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#project">Project</a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="#modalContact"
+            data-bs-target="#modalContact"
+            data-bs-toggle="modal"
+            >Contact</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link nav-menu"
+            href="#offcanvasNavbar"
+            data-bs-toggle="offcanvas"
+            aria-controls="offcanvasNavbar"
+            ><i class="fa-solid fa-bars"></i
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <div
+      data-bs-spy="scroll"
+      data-bs-target="#navbar-nav"
+      data-bs-root-margin="0px 0px -40%"
+      data-bs-smooth-scroll="true"
+      class="scrollspy-example bg-body-tertiary p-3 rounded-2"
+      tabindex="0"
+    ></div>
+
+    <!-- offcanvas navbar -->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="offcanvasNavbar"
+      aria-labelledby="offcanvasNavbar"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body pt-0">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#skill">Skill</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#project">Project</a>
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              href="#modalContact"
+              data-bs-target="#modalContact"
+              data-bs-toggle="modal"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- end offcanvas navbar -->
+
+    <!-- end navbar -->
+
+    <!-- Home -->
+
+    <div class="container-fluid py-5" id="home">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-lg-start text-center">
+            <h3 data-aos="fade-right" data-aos-duration="1000">Hello, I'm</h3>
+            <h1
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              Nicolas Satria Afri Liyansa
+            </h1>
+            <p
+              data-aos="fade-right"
+              data-aos-duration="1000"
+              data-aos-delay="400"
+            >
+              check out my portfolio!
+            </p>
+            <div
+              class="home-button d-flex align-items-center justify-content-between col-lg-3 col-md-6 col-10 offset-1 offset-lg-0 offset-md-3 text-lg-start text-center"
+            >
+              <a
+                href="#about"
+                class="button-primary"
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+                data-aos-delay="600"
+                >Let's Go</a
+              >
+              <a
+                href="#modalContact"
+                class="button-second"
+                data-aos="zoom-in"
+                data-aos-duration="2000"
+                data-aos-delay="800"
+                data-bs-target="#modalContact"
+                data-bs-toggle="modal"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end home -->
+
+    <!-- about -->
+
+    <div class="container-fluid pt-5" id="about">
+      <div class="container">
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-4">
+            <img
+              src="img/background home.jpeg"
+              alt="foto profil"
+              class="img-fluid"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+            />
+          </div>
+          <div class="col-lg-8 col-12">
+            <h1
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              About me
+            </h1>
+            <p
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="300"
+            >
+              " Hi, my name is
+              <span class="fw-bold">Nicolas Satria Afri Liyansa</span> Currently
+              known as Nico, the second child from 2 of my sibling, born in
+              Pasuruan and live in Malang. I'm student of Polinema Malang, I am
+              majoring in Electrical Engineering with a concentration in digital
+              telecommunication networks. I have a strong passion for coding,
+              especially for website development. I have a keen interest in
+              learning various programming languages and the latest web
+              technologies. Additionally, I am actively involved in attending
+              various courses and training related to web development to
+              continuously improve my skills."
+            </p>
+            <a href="#skill" data-aos="fade-left" data-aos-duration="2000"
+              >See About Skill</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end about -->
+
+    <!-- skill -->
+
+    <div class="container-fluid skill mt-md-5 py-5" id="skill">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1 data-aos="fade-up" data-aos-duration="1000">Skill</h1>
+            <p
+              class="mb-3 mb-md-0"
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              data-aos-delay="200"
+            >
+              See all my skill in below
+            </p>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6 mt-md-5 mt-3"
+            data-aos="zoom-in"
+            data-aos-duration="1400"
+            data-aos-delay="100"
+          >
+            <div class="col-12">
+              <img
+                src="img/icon skill.png"
+                alt="icon skill"
+                class="icon-skill"
+              />
+            </div>
+            <div class="col-12 mt-5 mb-5 skill-card">
+              <h5>HTML</h5>
+              <p>
+                Unlocking digital creativity with HTML mastery! Crafting
+                captivating web experiences from scratch, one tag at a time.
+              </p>
+              <a href="#" class="learn-more">Learn More</a>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mt-md-5 mt-3"
+            data-aos="zoom-in"
+            data-aos-duration="1400"
+            data-aos-delay="200"
+          >
+            <div class="col-12">
+              <img
+                src="img/icon skill.png"
+                alt="icon skill"
+                class="icon-skill"
+              />
+            </div>
+            <div class="col-12 mt-5 mb-5 skill-card mid">
+              <h5>CSS</h5>
+              <p>
+                Elevating designs with CSS finesse! Transforming concepts into
+                visually stunning and responsive web layouts.
+              </p>
+
+              <a href="#" class="learn-more">Learn More</a>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mt-md-5 mt-3"
+            data-aos="zoom-in"
+            data-aos-duration="1400"
+            data-aos-delay="300"
+          >
+            <div class="col-12">
+              <img
+                src="img/icon skill.png"
+                alt="icon skill"
+                class="icon-skill"
+              />
+            </div>
+            <div class="col-12 mt-5 mb-5 skill-card">
+              <h5>JS</h5>
+              <p>
+                Breathing life into web applications with JavaScript wizardry!
+                Enhancing interactivity and functionality to create seamless
+                user experiences.
+              </p>
+
+              <a href="#" class="learn-more">Learn More</a>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mt-md-5 mt-3"
+            data-aos="zoom-in"
+            data-aos-duration="1400"
+            data-aos-delay="100"
+          >
+            <div class="col-12">
+              <img
+                src="img/icon skill.png"
+                alt="icon skill"
+                class="icon-skill"
+              />
+            </div>
+            <div class="col-12 mt-5 mb-5 skill-card">
+              <h5>Bootstrap</h5>
+              <p>
+                Building sleek and responsive web interfaces with Bootstrap
+                brilliance! Harnessing the power of Bootstrap to create modern
+                and visually appealing designs.
+              </p>
+
+              <a href="#" class="learn-more">Learn More</a>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mt-md-5 mt-3"
+            data-aos="zoom-in"
+            data-aos-duration="1400"
+            data-aos-delay="200"
+          >
+            <div class="col-12">
+              <img
+                src="img/icon skill.png"
+                alt="icon skill"
+                class="icon-skill"
+              />
+            </div>
+            <div class="col-12 mt-5 mb-5 skill-card mid">
+              <h5>CodeIgniter</h5>
+              <p>
+                Driving web development forward with CodeIgniter expertise!
+                Crafting robust and scalable web applications with the
+                efficiency and elegance of CodeIgniter.
+              </p>
+
+              <a href="#" class="learn-more">Learn More</a>
+            </div>
+          </div>
+          <div
+            class="col-lg-4 col-md-6 mt-md-5 mt-3"
+            data-aos="zoom-in"
+            data-aos-duration="1400"
+            data-aos-delay="300"
+          >
+            <div class="col-12">
+              <img
+                src="img/icon skill.png"
+                alt="icon skill"
+                class="icon-skill"
+              />
+            </div>
+            <div class="col-12 mt-5 mb-5 skill-card">
+              <h5>Elementor CMS</h5>
+              <p>
+                Empowering creativity with Elementor mastery! Designing stunning
+                WordPress websites with drag-and-drop simplicity and boundless
+                customization possibilities.
+              </p>
+
+              <a href="#" class="learn-more">Learn More</a>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <a
+              href="#project"
+              class="skill-button"
+              data-aos="zoom-in"
+              data-aos-duration="1000"
+              >See my Project</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end skill -->
+
+    <!-- project -->
+
+    <div class="container-fluid project py-5 mt-5 mb-5" id="project">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 text-center">
+            <h1>My Project</h1>
+            <p class="mb-5">See all my project was done</p>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 project-card">
+            <img src="img/Drone web.png" class="img-fluid" alt="Drone Web" />
+            <h3>Drone.com</h3>
+            <p>
+              <span class="fw-bold">Drone.com</span> is a website for a reseller
+              that specializes in offering a wide range of drones for both
+              recreational and professional use. Our platform provides customers
+              with a seamless shopping experience, featuring the latest models
+              from top brands, comprehensive product descriptions, and user
+              reviews to help you make informed purchasing decisions.
+            </p>
+            <ul>
+              <li><p>HTML 5</p></li>
+              <li><p>CSS 3</p></li>
+              <li><p>JavaScript</p></li>
+              <li><p>Bootstrap 5.3</p></li>
+              <li><p>RemixIcon</p></li>
+              <li><p>Responsive</p></li>
+            </ul>
+            <div class="row mx-2">
+              <a
+                href="https://kaizoazura.github.io/DroneWeb.github.io/"
+                target="_blank"
+                >See Website</a
+              >
+            </div>
+          </div>
+          <div class="col-md-6 project-card text-center">
+            <img
+              src="img/Coming soon.png"
+              class="img-fluid w-50 mx-auto"
+              alt="Drone Web"
+            />
+            <h3 class="text-start">Coming Soon...</h3>
+          </div>
+        </div>
+
+        <div class="row mt-5">
+          <div
+            class="col-12 d-md-flex align-items-center justify-content-center flex-column flex-md-row"
+          >
+            <div
+              class="col-lg-2 col-md-4 mx-md-3 text-center button-primary col-12"
+            >
+              <a href="#">See all Project</a>
+            </div>
+            <div
+              class="col-lg-2 col-md-4 mx-md-3 text-center mt-5 mt-md-auto button-second col-12"
+            >
+              <a
+                href="#modalContact"
+                data-bs-toggle="modal"
+                data-bs-target="#modalContact"
+                >Contact Me</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- end project -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

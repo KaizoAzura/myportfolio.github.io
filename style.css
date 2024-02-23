@@ -1,0 +1,523 @@
+* {
+  font-family: "Mabry Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000;
+}
+
+/* navbar */
+
+.navbar {
+  background-color: #000;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 15px;
+}
+
+.navbar a.navbar-brand {
+  color: #fff;
+  font-weight: bold;
+  font-size: 30px;
+}
+.navbar ul li a.nav-link {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+
+.navbar ul li a.nav-link.nav-menu {
+  display: none;
+}
+
+.navbar ul li a.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+.navbar ul li a.nav-link:hover {
+  color: orange;
+}
+
+.navbar ul li a.nav-link:hover::before {
+  background-color: #fff;
+}
+
+/* offcanvas navbar */
+
+#offcanvasNavbar {
+  background-color: #0f0f0f;
+  display: none;
+}
+
+#offcanvasNavbar h5 {
+  font-weight: bold;
+  font-size: 25px;
+  color: #fff;
+}
+
+.btn-close:focus {
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+
+#offcanvasNavbar ul {
+  display: flex;
+  flex-direction: column;
+}
+
+#offcanvasNavbar ul li {
+  position: relative; /* Memberikan posisi relatif untuk menggunakan pseudo-element */
+}
+
+#offcanvasNavbar ul li a {
+  color: #fff;
+  font-weight: 400;
+  margin: 8px 0;
+  position: relative;
+  font-size: 16px;
+}
+
+#offcanvasNavbar ul li a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+#offcanvasNavbar ul li a:hover::before {
+  background-color: #fff;
+}
+
+/* end offcanvas navbar */
+
+/* home */
+#home {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, #0000002e 5%, #000 95%),
+    url(img/background\ home.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+#home h3 {
+  font-family: "Anta", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#home h1 {
+  font-family: "Anta", sans-serif;
+  color: #fff;
+  font-weight: bold;
+  font-size: 65px;
+}
+
+#home p {
+  color: #fff;
+  font-weight: 400;
+  font-size: 20px;
+  margin-top: 15px;
+}
+
+#home .home-button {
+  margin-top: 20px;
+}
+
+#home .home-button a.button-primary {
+  background-color: orange;
+  color: #000;
+  border: 3px solid orange;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 7px 17px;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+#home .home-button a.button-primary:hover {
+  background-color: #fff;
+  padding: 7px 17px;
+  transition: 0.4s ease-in-out;
+  transform: scale(0.95);
+}
+
+#home .home-button a.button-second {
+  background-color: #fff;
+  border: 3px solid orange;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 7px 17px;
+  font-size: 18px;
+  transition: 0.4s;
+}
+
+#home .home-button a.button-second:hover {
+  background-color: orange;
+  transition: 0.4s ease-in-out;
+  transform: scale(0.85);
+}
+/* end home */
+
+/* about */
+
+#about {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+#about img {
+  width: 100%;
+}
+
+#about h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  font-family: "Anta", sans-serif;
+}
+
+#about p {
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+
+#about a {
+  background-color: orange;
+  border: 3px solid orange;
+  color: #000;
+  padding: 7px 17px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s;
+}
+
+#about a:hover {
+  background-color: #fff;
+  border: 3px solid orange;
+  transition: 0.4s;
+  transform: scale(0.95);
+}
+
+/* end about */
+
+/* skill */
+
+.skill {
+  height: max-content;
+  display: flex;
+  align-items: center;
+}
+
+.skill h1 {
+  color: #fff;
+  font-weight: bold;
+  font-size: 60px;
+  font-family: "Anta", sans-serif;
+  margin-bottom: 10px;
+}
+
+.skill p {
+  color: #bbbbbb;
+  font-size: 18px;
+}
+
+.skill img.icon-skill {
+  width: 10%;
+  filter: drop-shadow(-20px -20px 40px rgb(65, 65, 65));
+}
+
+.skill-card {
+  padding: 30px;
+}
+
+.skill-card.mid {
+  border-right: 2px solid #fff;
+  border-left: 2px solid #fff;
+}
+
+.skill .skill-card h5 {
+  font-weight: bold;
+  color: #fff;
+  font-size: 25px;
+}
+
+.skill .skill-card p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #bbbbbb;
+}
+
+.skill .skill-card a.learn-more {
+  color: #fff;
+  font-weight: 400;
+}
+
+.skill a.skill-button {
+  background-color: orange;
+  color: #000;
+  font-weight: 600;
+  font-size: 18px;
+  border: 3px solid orange;
+  padding: 7px 17px;
+  transition: 0.4s;
+  text-decoration: none;
+}
+
+.skill a.skill-button:hover {
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+/* end skill */
+
+.project h1 {
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+  font-family: "Anta", sans-serif;
+}
+
+.project p {
+  font-size: 18px;
+  color: #fff;
+  font-weight: 400;
+  color: #bbbbbb;
+}
+
+.project-card {
+  background-color: #0f0f0f;
+  padding: 25px;
+  box-sizing: border-box;
+  border: 8px solid #000;
+}
+
+.project-card h3 {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #fff;
+}
+
+.project-card ul {
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+.project-card p {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+}
+
+.project-card a {
+  padding: 7px 17px;
+  background-color: orange;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.4s;
+  border: 3px solid orange;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+}
+
+.project-card a:hover {
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.project .button-primary a {
+  padding: 7px 17px;
+  background-color: orange;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.4s;
+  border: 3px solid orange;
+  text-decoration: none;
+}
+
+.project .button-second a {
+  padding: 7px 17px;
+  background-color: #fff;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.4s;
+  border: 3px solid orange;
+  text-decoration: none;
+}
+
+.project .button-primary a:hover {
+  background-color: #fff;
+  transition: 0.4s;
+}
+
+.project .button-second a:hover {
+  background-color: orange;
+  transition: 0 4s;
+}
+
+/* modal */
+
+.modal-contact {
+  background-color: #000;
+  color: #fff;
+}
+
+.modal a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+  font-size: 20px;
+}
+
+.modal a:hover {
+  color: orange;
+  transition: 0.3s;
+}
+
+/* end modal */
+/* responsive tablet */
+
+@media screen and (max-width: 1024px) and (min-width: 767px) {
+  .navbar ul li a.nav-link {
+    display: none;
+  }
+
+  .navbar ul li a.nav-link.nav-menu {
+    display: flex;
+    font-size: 25px;
+  }
+
+  .navbar ul li a.nav-link:hover::before {
+    background-color: transparent;
+  }
+
+  #offcanvasNavbar {
+    display: flex;
+  }
+
+  /* home */
+
+  #home h3 {
+    font-size: 30px;
+  }
+
+  #home h1 {
+    font-size: 45px;
+  }
+
+  /* about */
+
+  #about h1 {
+    font-size: 45px;
+  }
+
+  #about p {
+    font-size: 20px;
+  }
+
+  #about img {
+    display: none;
+  }
+
+  /* skill */
+
+  .skill-card {
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+  }
+
+  .skill h1 {
+    font-size: 45px;
+  }
+
+  /* project */
+
+  .project h1 {
+    font-size: 45px;
+  }
+}
+
+/* responsive mobile */
+
+@media screen and (max-width: 766px) {
+  #offcanvasNavbar {
+    display: flex;
+  }
+
+  .navbar ul li a.nav-link {
+    display: none;
+  }
+
+  .navbar ul li a.nav-link.nav-menu {
+    display: flex;
+    font-size: 25px;
+  }
+
+  /* home */
+
+  #home h3 {
+    font-size: 25px;
+  }
+
+  #home h1 {
+    font-size: 45px;
+  }
+
+  /* about */
+
+  #about h1 {
+    font-size: 45px;
+  }
+
+  #about p {
+    font-size: 18px;
+  }
+
+  #about img {
+    display: none;
+  }
+
+  /* skill */
+
+  .skill-card {
+    border-right: 2px solid #fff;
+    border-left: 2px solid #fff;
+  }
+
+  .skill h1 {
+    font-size: 45px;
+  }
+
+  /* project */
+
+  .project h1 {
+    font-size: 45px;
+  }
+}
